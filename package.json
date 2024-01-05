@@ -18,20 +18,10 @@
       "import": "./dist/esm/index.js",
       "default": "./dist/cjs/index.js"
     },
-    "./privy": {
-      "types": "./dist/types/integrations/privy/index.d.ts",
-      "import": "./dist/esm/integrations/privy/index.js",
-      "default": "./dist/cjs/integrations/privy/index.js"
-    },
     "./rainbowkit": {
       "types": "./dist/types/integrations/rainbowkit/index.d.ts",
       "import": "./dist/esm/integrations/rainbowkit/index.js",
       "default": "./dist/cjs/integrations/rainbowkit/index.js"
-    },
-    "./connectkit": {
-      "types": "./dist/types/integrations/connectkit/index.d.ts",
-      "import": "./dist/esm/integrations/connectkit/index.js",
-      "default": "./dist/cjs/integrations/connectkit/index.js"
     },
     "./web3modal": {
       "types": "./dist/types/integrations/web3modal/index.d.ts",
