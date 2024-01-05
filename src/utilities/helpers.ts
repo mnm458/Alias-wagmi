@@ -12,6 +12,8 @@ import {
     hexToSignature,
     signatureToHex,
   } from "viem";
+  import * as chains from "viem/chains";
+  import * as customChains from "./custom-chains.js";
 
 export function getRPCProviderOwner(web3Provider: any): SmartAccountSigner {
   const provider = new Web3Provider(web3Provider as ExternalProvider);
@@ -48,3 +50,16 @@ export const fixSignedData = (sig: Hex): Hex => {
     const joined = signatureToHex({ r, s, v });
     return joined;
   };
+
+
+  export const getChain = (chainId: number): chains.Chain => {
+    for (const chain of Object.values(chains).concat(
+      Object.values(customChains)
+    )) {
+      if (chain.id === chainId) {
+        return chain;
+      }
+    }
+    throw new Error("could not find chain");
+  };
+  
