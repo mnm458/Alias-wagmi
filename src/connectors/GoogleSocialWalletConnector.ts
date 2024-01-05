@@ -1,5 +1,5 @@
 import { AbstractWeb3AuthWalletConnector } from './AbstractWeb3AuthWalletConnector.js'
-import { LoginProvider } from '@zerodev/web3auth'
+import { LoginProvider } from '../utilities/provider.js'
 
 export class GoogleSocialWalletConnector extends AbstractWeb3AuthWalletConnector {
     id = 'google'
