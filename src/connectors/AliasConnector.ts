@@ -24,7 +24,7 @@ export type AccountParams = {
     onlySendSponsoredTransaction?: boolean
 }
 
-export class ZeroDevConnector<Options = AccountParams> extends Connector<ECDSAProvider, Options> {
+export class AliasConnector<Options = AccountParams> extends Connector<ECDSAProvider, Options> {
     provider: ECDSAProvider | null = null
     walletClient: any | null = null
     id = 'zeroDev'

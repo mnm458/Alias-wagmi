@@ -1,17 +1,20 @@
-import { AccountParams, ZeroDevConnector } from "./ZeroDevConnector.js";
-import { ZeroDevWeb3Auth, type ZeroDevWeb3AuthOptions, type LoginProvider, type ZeroDevWeb3AuthInitOptions } from '@zerodev/web3auth'
+import { AccountParams, AliasConnector } from "./AliasConnector.js";
+import AliasWeb3Auth from '../utilities/provider.js'
+import { LoginProvider } from "../utilities/provider.js";
+import {AliasWeb3AuthInitOptions } from "../utilities/provider-config.js";
+import { AliasWeb3AuthOptions } from "../utilities/provider-config.js";
 import { getConfig } from '@wagmi/core';
 import type { Chain } from 'wagmi/chains';
 import { connect } from 'wagmi/actions'
 import { LocalAccountSigner, SmartAccountSigner } from "@alchemy/aa-core";
 import { getRPCProviderOwner } from '../utilities/helpers.js'
 
-export type AbstractWeb3AuthWalletConnectorOptions = Omit<Partial<AccountParams>, "owner" | "disconnect"> & Partial<ZeroDevWeb3AuthOptions>
+export type AbstractWeb3AuthWalletConnectorOptions = Omit<Partial<AccountParams>, "owner" | "disconnect"> & Partial<AliasWeb3AuthOptions>
 
-export abstract class AbstractWeb3AuthWalletConnector extends ZeroDevConnector {
+export abstract class AbstractWeb3AuthWalletConnector extends AliasConnector {
     abstract loginProvider: LoginProvider
     owner: SmartAccountSigner | undefined;
-    web3Auth: ZeroDevWeb3Auth | undefined
+    web3Auth: AliasWeb3Auth | undefined
     
     constructor(
         {chains = [], options}: {chains?: Chain[]; options: AbstractWeb3AuthWalletConnectorOptions},
@@ -19,8 +22,8 @@ export abstract class AbstractWeb3AuthWalletConnector extends ZeroDevConnector {
         super({chains, options})
         this.getChainId().then(chainId => {
             if (this.options.projectIds) {
-                const web3AuthInitOptions: ZeroDevWeb3AuthInitOptions = {}
-                this.web3Auth = ZeroDevWeb3Auth.getInstance(this.options.projectIds, chainId, {
+                const web3AuthInitOptions: AliasWeb3AuthInitOptions = {}
+                this.web3Auth = AliasWeb3Auth.getInstance(this.options.projectIds, chainId, {
                     adapterSettings: options.adapterSettings,
                     web3authOptions: options.web3authOptions
                 })

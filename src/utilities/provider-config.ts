@@ -7,11 +7,11 @@ export declare const CHAIN_ID_TO_NODE: {
 };
 
 export type ChainId = keyof typeof CHAIN_ID_TO_NODE;
-export type ZeroDevWeb3AuthOptions = {
+export type AliasWeb3AuthOptions = {
     web3authOptions?: Partial<Web3AuthNoModalOptions>;
     adapterSettings?: Partial<OpenloginAdapterOptions['adapterSettings']>;
 };
-export type ZeroDevWeb3AuthInitOptions = {
+export type AliasWeb3AuthInitOptions = {
     onConnect?: (userInfo: Partial<UserInfo>) => Promise<void> | void;
 };
 export interface ProjectConfiguration {
@@ -27,4 +27,4 @@ export interface ProjectConfiguration {
         verifierId: string | null;
     }>;
 }
-export type ZeroDevWeb3AuthEvents = 'onConnect';
+export type AliasWeb3AuthEvents = 'onConnect';

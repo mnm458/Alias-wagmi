@@ -1,6 +1,6 @@
 import { type Wallet } from "./wallets/wallet.js";
 import { enhanceConnectorWithAA } from '../../utilities/enhanceConnectorWithAA.js';
-import { type AccountParams } from '../../connectors/ZeroDevConnector.js'
+import { type AccountParams } from '../../connectors/AliasConnector.js'
 
 export const enhanceWalletWithAAConnector = (wallet: Wallet, params: Omit<AccountParams, 'owner'>) => {
     return new Proxy(wallet, {
