@@ -4,7 +4,7 @@ import { getConfig } from '@wagmi/core';
 import type { Chain } from 'wagmi/chains';
 import { connect } from 'wagmi/actions'
 import { LocalAccountSigner, SmartAccountSigner } from "@alchemy/aa-core";
-import { getRPCProviderOwner } from '@zerodev/sdk'
+import { getRPCProviderOwner } from '../utilities/helpers.js'
 
 export type AbstractWeb3AuthWalletConnectorOptions = Omit<Partial<AccountParams>, "owner" | "disconnect"> & Partial<ZeroDevWeb3AuthOptions>
 

@@ -1,1 +1,0 @@
-export { supportedSocialConnectors } from "./supportedSocialConnectors.js";

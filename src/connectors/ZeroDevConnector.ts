@@ -1,6 +1,7 @@
 import { Connector } from "wagmi";
 import { getConfig } from '@wagmi/core';
-import { ECDSAProvider, PaymasterAndBundlerProviders, SupportedGasToken } from '@zerodev/sdk'
+import { ECDSAProvider} from '@zerodev/sdk'
+import { PaymasterAndBundlerProviders, SupportedGasToken } from "../types/index.js";
 import type { Chain } from 'wagmi/chains';
 import { normalizeChainId } from "../utilities/normalizeChainId.js";
 import { ProjectConfiguration } from "../types/index.js";

@@ -143,3 +143,11 @@ export type GetArgs<
       verifierId: string | null
     }>
 }
+
+export type PaymasterAndBundlerProviders =
+  | "ALCHEMY"
+  | "STACKUP"
+  | "PIMLICO"
+  | "GELATO";
+
+export type SupportedGasToken = "USDC" | "PEPE" | "TEST_ERC20";

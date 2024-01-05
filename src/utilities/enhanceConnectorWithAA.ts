@@ -34,8 +34,9 @@ export const enhanceConnectorWithAA = (connector: Connector, params: Omit<Accoun
                             }
                         case 'getChainId':
                             if (provider === null) {
-                                const response = await ZeroDevApiService.getProjectConfiguration(params.projectId)
-                                return response["chainId"]
+                                // const response = await ZeroDevApiService.getProjectConfiguration(params.projectId)
+                                // return response["chainId"]
+                                return 80001;
                             }
                             return (await receiver.getProvider()).chainId
                         case 'getProvider':
