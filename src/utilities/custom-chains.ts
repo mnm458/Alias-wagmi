@@ -1,5 +1,32 @@
 import { defineChain } from "viem";
 
+export const arbitrumOne = defineChain({
+  id:42161,
+  name: "Arbitrum One",
+  network: "arbitrum",
+  nativeCurrency: {
+    decimals: 18,
+    name: "Ether",
+    symbol: "ETH",
+  },
+  rpcUrls: {
+    default: {
+      http: ["https://arb1.arbitrum.io/rpc"],
+      webSocket: [],
+    },
+    public: {
+      http: ["https://arb1.arbitrum.io/rpc"],
+      webSocket: [],
+    },
+  },
+  blockExplorers: {
+    default: {
+      name: "Explorer",
+      url: "https://arbiscan.io/",
+    },
+  },
+});
+
 export const gelatoOPTestnet = defineChain({
   id: 42069,
   name: "Gelato OPTestnet",
