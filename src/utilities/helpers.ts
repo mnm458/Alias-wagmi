@@ -53,13 +53,13 @@ export const fixSignedData = (sig: Hex): Hex => {
 
 
   export const getChain = (chainId: number): chains.Chain => {
-    for (const chain of Object.values(chains).concat(
-      Object.values(customChains)
-    )) {
+    const allChains = [...Object.values(chains) as chains.Chain[], ...Object.values(customChains) as chains.Chain[]];
+    for (const chain of allChains) {
       if (chain.id === chainId) {
         return chain;
       }
     }
+  
     throw new Error("could not find chain");
   };
   
